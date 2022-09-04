@@ -263,3 +263,7 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.nav-link {
+  background-color: #252525;
+}

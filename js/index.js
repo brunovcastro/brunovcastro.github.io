@@ -12,3 +12,16 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 });
+
+document.getElementById('login').innerHTML = localStorage.usuario
+
+limpiar.addEventListener("click", () => {
+    limpiarItems();
+});
+
+function limpiarItems() {
+    let usuario = document.getElementById("CerrarSesion");
+    usuario.innerHTML = "";
+    localStorage.removeItem('usuario'),
+    login.innerHTML = "Iniciar Sesión"
+}
