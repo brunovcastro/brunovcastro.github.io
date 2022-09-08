@@ -15,18 +15,23 @@ body {
 }
 
 
-form{
+form .columna{
+  position: relative;
+  padding: 5em;
   flex-direction: column;
   text-align: center;
-  padding: 5em 20em ;
   box-shadow: 5px rgba(71, 3, 6, 0.7);
+  justify-content: center;
+
+
 }
 
 form .title {
   color: #252525;
   font-size: 35px;
   font-weight: 400;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
+  font-family: Arial, Helvetica, sans-serifs;
 }
 
 form label {
