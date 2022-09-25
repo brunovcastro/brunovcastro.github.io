@@ -29,11 +29,20 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html" id="login">Ingresar</a> <!--boton de inicio de sesio desde el inicio-->
-          </li>
-          <li class="nav-item">
-            <button class="nav-link" href="index.html" id="CerrarSesion" onclick="limpiarItems()">Cerrar Sesión</button> <!--boton de inicio de sesio desde el inicio-->
+
+          <li>
+            
+            <div class="dropdown"> 
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <a id="login" ></a>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                <li><a class="dropdown-item" href="login.html">Cerrar sesiòn</a></li>
+              </ul>
+            </div>
+
           </li>
         </ul>
       </div>

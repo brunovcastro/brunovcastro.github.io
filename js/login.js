@@ -72,6 +72,10 @@ form.addEventListener("submit",function (event) {
         
         localStorage.setItem('usuario',(nombre.value));
         window.location.href="index.html"
+        window.location.href="products.html"
+        window.location.href="cart.html"
+        window.location.href="my-profile.html"
+        window.location.href="product-info.html"
     
     }
 }); 

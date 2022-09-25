@@ -15,9 +15,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 document.getElementById('login').innerHTML = localStorage.usuario
 
-limpiar.addEventListener("click", () => {
-    limpiarItems();
-});
 
 function limpiarItems() {
     let usuario = document.getElementById("CerrarSesion");
