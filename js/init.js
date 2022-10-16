@@ -44,3 +44,14 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+// Función para identificar usuario logeado
+document.getElementById('login').innerHTML = localStorage.usuario
+
+//Función para identificar eliminar el usuario del local storage
+function limpiarItems() {
+    let usuario = document.getElementById("CerrarSesion");
+    usuario.innerHTML = "";
+    localStorage.removeItem('usuario'),
+    login.innerHTML = "Iniciar Sesión"
+}
