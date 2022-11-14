@@ -78,7 +78,7 @@
 				</table>
 
 				<!--Formulario de envío (sin funcionalidad)-->
-				<form id="cartForm">
+				<form class="needs-validation" id="cartForm">
 					<fieldset class="form-group border p-3 mb-3" id="shippingType">
 						<div class="row">
 							<legend class="col-form-label pt-0 fs-4">Tipo de Envío</legend>
@@ -99,29 +99,159 @@
 						</div>
 					</fieldset>
 
-					<fieldset class="form-group border p-3">
-						<div class="row">
-							<legend class="col-form-label pt-0 fs-4">Dirección de Envío</legend>
-							<div>
-								<div class="form-row row">
-									<div class="form-group col-md-6 mb-3">
-										<label for="inputStreet">Calle</label>
-										<input type="text" class="form-control col-4" id="inputStreet" placeholder="Calle" required="" />
-									</div>
-									<div class="form-group col-md-6 mb-3">
-										<label for="inputNumber">Número</label>
-										<input type="number" min="0" class="form-control col-4" id="inputNumber" placeholder="Número" required="" />
-									</div>
+					<!--Formulario de envío (sin funcionalidad)-->
+
+					<div class="container">
+						<main>
+						  <form action="#" method="get" class="row mt-4">
+							  <h1 class="mb-3">Calle</h1>
+							  <hr class="my-4">
+							  <div class="row g-3">
+								
+								
+								<div class="col-sm-6">
+								  <label for="nombre" class="form-label">Calle</label>
+								  <input type="text" class="form-control" id="street" required>
+								  <div class="invalid-feedback">
+									Por favor, ingrese su Calle.
+								  </div>
 								</div>
-								<div class="form-group">
-									<label for="inputStInt">Esquina</label>
-									<input type="text" class="form-control" id="inputStInt" placeholder="Esquina" required="" />
+					
+								<div class="col-sm-6">
+								  <label for="apellido" class="form-label">Numero</label>
+								  <input type="text" class="form-control" id="number">
+								  <div class="invalid-feedback">
+								   Por favor, ingrese un Numero.
+								  </div>
 								</div>
+					
+											
+					
+								<div class="col-12">
+									<label for="apellido" class="form-label">Esquina</label>
+									<input type="text" class="form-control" id="Int" >
+									<div class="invalid-feedback">
+										Por favor, ingrese una Esquina.
+									</div>
+								</div>  
+					
+							</div>
+						  </form>
+			
+
+
+				 <!--List grup que refleja el precio total-->
+
+
+				 <hr class="mb-4">
+				 <h4 class="mb-3">Costos</h4>
+				 <ul class="list-group mb-3">
+				   <li class="list-group-item d-flex justify-content-between lh-condensed">
+					 <div>
+					   <h6 class="my-0">SubTotal</h6>
+					   <small class="text-muted">costo unitario del producto por cantidad</small>
+					 </div>
+					 <span class="text-muted" id="subtotalText">-</span>
+				   </li>
+				   <li class="list-group-item d-flex justify-content-between lh-condensed">
+					 <div>
+					   <h6 class="my-0">Costo de envio</h6>
+					   <small class="text-muted">Según el tipo de envio</small>
+					 </div>
+					 <span class="text-muted" id="envio">-</span>
+				   </li>
+				   <li class="list-group-item d-flex justify-content-between">
+					 <span>Total ($)</span>
+					 <strong id="totalCost">-</strong>
+				   </li>
+				 </ul>
+
+				 <!--metodo de pago-->
+
+						
+				 <h2>Forma de pago </h2>
+				 <hr> </hr>
+				 <div class="col-sm-12">
+				   <div class="d-flex align-items-center">
+					 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTerminos" id="btn">
+					   Seleccionar
+					 </button>
+					 <div id="invalidTerms" class="d-none">
+					   No ha selecionado
+					 </div>
+				   </div>
+				 </div>
+
+
+					<div class="modal fade" id="modalTerminos" tabindex="-1" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Seleccione aquí un método de pago</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body" id="metodoPagoLabel">
+									<form class="form-group">
+									<input id="tarjeta" type="radio" style="display: inline;" name="metodo-pago" required="" value="tarjeta">
+									<label for="tarjeta"><b>Tarjeta de crédito</b></label>
+									<label for="recipient-name" class="col-form-label"></label>
+										<input type="text" class="form-control input-sm" placeholder="Nombres y apellidos">
+										<label for="recipient-name" class="col-form-label"></label>
+										<input type="text" class="form-control input-sm" placeholder="Número de tarjeta">
+										<label for="recipient-name" class="col-form-label">Expiración</label>
+										<input type="date" size= 5 class="form-control-sm" id="expiracion">
+										<label for="recipient-name" class="col-form-label">CVV</label>
+										<input type="text" class="form-control-sm" id="recipient-name" placeholder="###" maxlength="3" size="3">
+										<label for="recipient-name" class="col-form-label"></label>
+										<input type="text" class="form-control input-sm" id="recipient-name" placeholder="CI del titular">
+									</form><br>
+									<form class="form-group">
+									<input id="transferencia" type="radio" style="display: inline;" name="metodo-pago"  required="" value="transferencia">
+									<label for="transferencia"><b>Transferencia bancaria</b></label>
+									<label for="recipient-name" class="col-form-label"></label>
+										<input type="text" class="form-control input-sm" placeholder="Nombres y apellidos">
+										<label for="recipient-name" class="col-form-label"></label>
+										<input type="text" class="form-control input-sm" placeholder="Banco">
+										<label for="recipient-name" class="col-form-label"></label>
+										<input type="text" class="form-control input-sm" placeholder="Sucursal">
+										<label for="recipient-name" class="col-form-label"></label>
+										<input type="text" class="form-control input-sm" id="recipient-name" placeholder="CI del titular">
+									</form><br>
+									<input id="efectivo" type="radio" style="display: inline;" name="metodo-pago" required=" " value="efectivo">
+									<label for="efectivo"><b>Efectivo</b></label>
+									<p><small class="text-muted">Diríjase a su red de cobranza más cercana.</small></p>
+									<div class="container" id="modalTerminos"></div>
+								</div> 
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+									<button type="button" class="btn btn-primary" data-dismiss="modal" id="save">Guardar cambios</button>
+									</div>
+			
 							</div>
 						</div>
-					</fieldset>
-				</form>
-			</div>
+					</div>
+
+					
+
+				<!--Botton Comprar -->
+				<hr class="mb-6">
+				</div>
+				<button class="btn btn-primary" type="button" id="button">Finalizar Compra</button>	
+
+				</div>
+
+
+
+
+
+					
+			
+				
+			</div>	 
+
+			
 		</main>
 		<footer class="text-muted">
 			<div class="container">

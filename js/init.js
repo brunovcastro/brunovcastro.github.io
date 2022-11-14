@@ -6,6 +6,8 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japceibal.github.io/emercado-api/prod
 const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
+const Verif = localStorage.getItem("data");
+
 
 const setProducts= function setProducts(id) {
 localStorage.setItem("catID2", id)
@@ -55,3 +57,27 @@ function limpiarItems() {
     localStorage.removeItem('usuario'),
     login.innerHTML = "Iniciar Sesión"
 }
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+	"use strict";
+
+	// Fetch all the forms we want to apply custom Bootstrap validation styles to
+	var forms = document.querySelectorAll(".needs-validation");
+
+	// Loop over them and prevent submission
+	Array.prototype.slice.call(forms).forEach(function (form) {
+		form.addEventListener(
+			"submit",
+			function (event) {
+				if (!form.checkValidity()) {
+					event.preventDefault();
+					event.stopPropagation();
+				}
+
+				form.classList.add("was-validated");
+			},
+			false
+		);
+	});
+})();

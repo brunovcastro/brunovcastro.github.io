@@ -34,9 +34,19 @@ form .title {
   font-family: Arial, Helvetica, sans-serifs;
 }
 
+.alert {
+	display: none;
+}
+
+#currentAvatarImage {
+	width: 250px;
+	height: 250px;
+}
+
 form label {
   margin-bottom: 20px;
 }
+
 
 form label .fa-solid {
   font-size: 20px;
